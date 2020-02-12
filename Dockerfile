@@ -8,6 +8,6 @@ RUN apt-get update \
 
 RUN npm install -g yarn webpack webpack-cli
 
-RUN pip install awscli
+RUN pip3 install awscli
 
 WORKDIR /htdocs/www
