@@ -7,7 +7,5 @@ RUN apt-get update \
 
 RUN npm install -g yarn webpack webpack-cli
 
-# Clean up
-RUN 
     
 WORKDIR /htdocs/www
