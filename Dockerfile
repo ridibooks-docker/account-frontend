@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 RUN apt-get update && apt-get upgrade -y \
-    && apt-get install -y curl make software-properties-common build-essential ap-transport-https ca-certificates \
+    && apt-get install -y curl make software-properties-common build-essential apt-transport-https ca-certificates \
     \
     && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
     && apt-get install -y nodejs \
