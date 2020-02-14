@@ -5,6 +5,7 @@ RUN apt-get update && apt-get upgrade -y \
     && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
     && apt-get install -y nodejs make python3 python3-pip software-properties-common build-essential \
     && apt-get install -y libssl-dev ca-certificates libmysqlclient-dev \
+    && apt-get install -y docker-ce docker-ce-cli containerd.io \
     && add-apt-repository --yes ppa:deadsnakes/ppa \
     && apt-get update \
     && apt-get install -y python3.7 python3.7-dev python3-pip \
