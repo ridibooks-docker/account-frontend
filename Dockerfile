@@ -11,8 +11,7 @@ RUN apt-get update \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update
-RUN apt-get install npm
+RUN ln -s /usr/local/bin/npm /usr/bin/npm
 
 RUN npm install -g yarn webpack webpack-cli
 RUN pip3 install --upgrade pip setuptools pipenv awscli boto3 ecs-deploy docker-compose  
