@@ -2,21 +2,21 @@ FROM ubuntu:18.04
 
 RUN apt-get update && apt-get upgrade -y \
     && apt-get install -y curl make software-properties-common build-essential ap-transport-https ca-certificates \
-    
+    \
     && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
     && apt-get install -y nodejs \
-
+    \
     && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - \
-    && add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+    && add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable" \
     && apt-get update \
     && apt-get install -y docker-ce \
-    
+    \
     && apt-get install -y make python3 python3-pip libmysqlclient-dev libssl-dev \
     && add-apt-repository --yes ppa:deadsnakes/ppa \
     && apt-get update \
     && apt-get install -y python3.7 python3.7-dev python3-pip \
     && update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 2 \
-
+    \
     && apt-get clean \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/*
