@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 RUN apt-get update && apt-get upgrade -y \
     && apt-get install -y curl \
     && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
-    && apt-get install -y nodejs npm make python3 python3-pip software-properties-common build-essential \
+    && apt-get install -y nodejs make python3 python3-pip software-properties-common build-essential \
     && apt-get install -y libssl-dev ca-certificates libmysqlclient-dev \
     && add-apt-repository --yes ppa:deadsnakes/ppa \
     && apt-get update \
