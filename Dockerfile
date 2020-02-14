@@ -1,7 +1,9 @@
 FROM ubuntu:18.04
 
-RUN apt-get update \
-    && apt-get install -y nodejs npm make curl python3 python3-pip software-properties-common build-essential \
+RUN apt-get update && apt-get upgrade -y \
+    && apt-get install -y curl
+    && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
+    && apt-get install -y nodejs npm make python3 python3-pip software-properties-common build-essential \
     && apt-get install -y libssl-dev ca-certificates libmysqlclient-dev \
     && add-apt-repository --yes ppa:deadsnakes/ppa \
     && apt-get update \
@@ -10,8 +12,6 @@ RUN apt-get update \
     && apt-get clean \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/*
-
-RUN ln -s /usr/local/bin/npm /usr/bin/npm
 
 RUN npm install -g yarn webpack webpack-cli
 RUN pip3 install --upgrade pip setuptools pipenv awscli boto3 ecs-deploy docker-compose  
